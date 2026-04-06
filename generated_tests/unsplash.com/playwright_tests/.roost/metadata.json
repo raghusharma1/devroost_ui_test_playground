@@ -1,0 +1,26 @@
+{
+  "metadata_version": "1.0",
+  "created_at": "2026-04-06T13:56:47.161664",
+  "last_updated": "2026-04-06T13:56:47.187881",
+  "urls_to_pom_map": {},
+  "Login_File": {
+    "name": "standard",
+    "path": null,
+    "hash": "d72d9a605c3e9cbee90f7f84a84695725c144b63582275d80e11cf87bcdb719c",
+    "agent_workflow_completed": false,
+    "agent_workflow_file_path": null,
+    "agent_interaction_file_path": null,
+    "scenario_name": null,
+    "scenario_file_path": null,
+    "test_generated": false,
+    "test_name": null,
+    "test_file_path": null,
+    "test_executed_success": null,
+    "pom_test_name": null,
+    "pom_test_file_path": null,
+    "pom_test_executed_success": null,
+    "pom_test_execution_error": null
+  },
+  "User_Scenarios_File": [],
+  "Exploration_Scenarios": []
+}
