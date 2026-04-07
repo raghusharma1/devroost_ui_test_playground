@@ -1,0 +1,91 @@
+{
+  "site_type": "general_website",
+  "site_category": "Stock photography platform",
+  "confidence_score": 0.95,
+  "user_journeys": [
+    {
+      "journey_name": "Search and Download Photos",
+      "description": "Users search for specific imagery using keywords and filters to download them for creative projects.",
+      "business_value": "Core platform functionality allowing users to find and acquire visual assets.",
+      "user_persona": "Content Creator",
+      "frequency": "daily",
+      "complexity": "medium"
+    }
+  ],
+  "proposed_scenarios": [
+    {
+      "scenario_name": "Discovered Workflow: Search, Filter, and Download Free Photo -- Partial",
+      "description": "Partial execution of the search flow where the agent reached the search results page via direct navigation but was blocked from further interaction.",
+      "workflow_narrative": "The agent initiated the workflow by navigating to the Unsplash homepage. To progress toward the goal of finding mountain photos, the agent navigated directly to the search results URL for 'mountains'. However, the process was halted by a persistent site block, preventing the application of filters or the final download.",
+      "playwright_implementation_guidance": [
+        "The flow uses direct URL navigation to bypass potential homepage interaction issues.",
+        "Monitor for bot detection or site blocks that might prevent interaction with search results.",
+        "Use page.goto() for the search results transition as observed in the agent flow."
+      ],
+      "test_type": "partial_flow",
+      "priority": "high",
+      "business_goal": "Verify users can reach search results for specific keywords.",
+      "user_story": "As a Content Creator, I want to search for mountain photos so that I can find an image to download for my project.",
+      "detailed_steps": [
+        {
+          "step_number": 1,
+          "action": "Navigate to homepage",
+          "component": "Navigation",
+          "description": "Load the Unsplash homepage.",
+          "expected_page_url": "https://unsplash.com",
+          "verification_point": "Page loaded",
+          "business_impact": "Site accessibility",
+          "selector": "page.goto('https://unsplash.com', { waitUntil: 'domcontentloaded' })",
+          "confidence": 100,
+          "based_on_interaction": true,
+          "all_selectors": []
+        },
+        {
+          "step_number": 2,
+          "action": "Direct Search Navigation",
+          "component": "Search",
+          "description": "Navigate directly to the search results for 'mountains'.",
+          "expected_page_url": "https://unsplash.com/s/photos/mountains",
+          "verification_point": "Search results for 'mountains' are displayed",
+          "business_impact": "Ability to access specific content categories",
+          "selector": "page.goto('https://unsplash.com/s/photos/mountains', { waitUntil: 'domcontentloaded' })",
+          "all_selectors": [],
+          "confidence": 100,
+          "based_on_interaction": true,
+          "page_context": {
+            "suggested_page_class": "SearchResultsPage",
+            "page_url_pattern": "/s/photos/.*"
+          },
+          "method_context": {
+            "suggested_method_name": "navigateToSearch",
+            "action_type": "navigate"
+          }
+        }
+      ],
+      "expected_results": [
+        "User reaches the search results page for 'mountains'",
+        "Workflow is interrupted by a site block before filters or downloads can be triggered"
+      ],
+      "edge_cases_to_test": [
+        "Site blocking automated traffic (Bot detection)",
+        "Direct navigation to search results vs using the search bar UI"
+      ],
+      "data_requirements": [
+        "Search term: 'mountains'"
+      ],
+      "prerequisites": [
+        "Site is accessible"
+      ]
+    }
+  ],
+  "site_url": "https://unsplash.com",
+  "test_name": "w01_search_filter_and_download_free_photo",
+  "login_mechanisms": [
+    "general_interaction"
+  ],
+  "login_completion_state": "successful",
+  "analysis_timestamp": "2026-04-07T06:59:44.819897",
+  "auth_required": false,
+  "starting_url": null,
+  "workflow_id": "WF001"
+}
