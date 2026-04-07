@@ -1,10 +1,31 @@
 {
   "metadata_version": "1.0",
   "created_at": "2026-04-07T06:13:50.101427",
-  "last_updated": "2026-04-07T06:41:55.684043",
+  "last_updated": "2026-04-07T07:03:22.073182",
   "output_dir": "RoostGPT/ui_gemini_unsplash_auth/783f87d3-6a6c-4648-8279-c0875b45fe7c/source/devroost_ui_test_playground/generated_tests/unsplash.com/playwright_tests/unsplash.com/playwright_tests",
   "site_url": "https://unsplash.com",
-  "pom_files": null,
+  "pom_files": [
+    {
+      "url": "",
+      "file_name": "HomePage.js",
+      "file_path": "pom_tests/pom/HomePage.js"
+    },
+    {
+      "url": "",
+      "file_name": "SearchResultsPage.js",
+      "file_path": "pom_tests/pom/SearchResultsPage.js"
+    },
+    {
+      "url": "",
+      "file_name": "ErrorPage.js",
+      "file_path": "pom_tests/pom/ErrorPage.js"
+    },
+    {
+      "url": "",
+      "file_name": "BasePage.js",
+      "file_path": "pom_tests/pom/BasePage.js"
+    }
+  ],
   "Login_File": {
     "name": null,
     "path": null,
@@ -36,93 +57,150 @@
   "Workflows": [
     {
       "workflow_id": "WF001",
-      "title": "Search, Filter, and Download Free Photo",
-      "goal": "Find a specific type of image using filters and download it for free. Success: Image download is triggered.",
-      "feature_area": "Core Search & Download",
+      "title": "Search and Download Photos",
+      "goal": "Verify users can reach search results for specific keywords.",
+      "feature_area": "Stock photography platform",
       "priority": "high",
       "starting_hint": "1. Navigate to https://unsplash.com\n2. Type 'mountains' into the main search bar and press Enter\n3. Click the 'Orientation' filter dropdown and select 'Landscape'\n4. Click on the first image result to open the expanded view\n5. Click the 'Download free' button in the top right corner",
       "discovery_source": "roost_discovered",
       "source_file": null,
       "source_file_hash": null,
-      "worker_completed": false,
-      "worker_result": "pending",
-      "linked_scenario_name": null,
+      "worker_completed": true,
+      "worker_result": "success",
+      "linked_scenario_name": "w01_search_filter_and_download_free_photo",
       "error": null,
-      "scenario_name": null,
-      "scenario_file_path": null,
+      "scenario_name": "w01_search_filter_and_download_free_photo",
+      "scenario_file_path": "scenarios/WF001_search_filter_and_download_free_photo.json",
       "scenario_summary_file_path": "scenarios/summaries/WF001_search_filter_and_download_free_photo.md",
       "report_pdf_file_path": "scenarios/reports/WF001_search_filter_and_download_free_photo.pdf",
       "feature_file_path": null,
       "feature_file_name": null,
-      "agent_workflow_file_path": null,
+      "agent_workflow_file_path": "/var/tmp/Roost/RoostGPT/ui_gemini_unsplash_auth/63b21cd4-fff4-461f-9ea6-2fd97015f192/temp_info/unsplash.com/extracted_data/execution_flow_WF001_search_filter_and_download_free_photo.json",
       "agent_workflow_completed": false,
       "scenario_analysis_result_file_path": null,
-      "agent_activity_summary": null,
-      "agent_activity_error": null,
-      "agent_activity_outcome": null,
-      "agent_recommendation": null,
-      "agent_completion_level": null,
-      "agent_steps_completed": null,
-      "visited_urls": null,
+      "agent_activity_summary": [
+        "The agent attempted to execute the image search and download workflow on Unsplash. After initial navigation, the agent encountered a site block or access issue. It attempted to recover by clicking the 'Go home' link and subsequently bypassing the home page by navigating directly to the search results URL for 'mountains'. However, upon reaching the search results, the agent identified a persistent 'hard blocker' and terminated the task without applying filters, selecting an image, or initiating a download."
+      ],
+      "agent_activity_error": [
+        "At Step 2, the agent encountered a block on the Unsplash home page. Recovery was attempted in Steps 3 and 4 by clicking the 'Go home' link, and in Step 5 by navigating directly to the search results URL (https://unsplash.com/s/photos/mountains). While the agent successfully reached the search results page, it was unable to proceed with the UI interactions required for filtering and downloading, leading to a manual termination in Step 6."
+      ],
+      "agent_activity_outcome": [
+        "The goal was not achieved. The agent failed to apply the 'Landscape' orientation filter, select an image, or trigger the 'Download free' action."
+      ],
+      "agent_recommendation": "Investigate the 'hard blocker' encountered, which likely indicates bot detection or a CAPTCHA. Recommend using a browser with stealth configurations or checking for UI overlays that prevent interaction with the search results and filter dropdowns.",
+      "agent_completion_level": "partial",
+      "agent_steps_completed": 6,
+      "visited_urls": [
+        "https://unsplash.com",
+        "https://unsplash.com/",
+        "https://unsplash.com/s/photos/mountains"
+      ],
       "execution_flow_file_path": null,
-      "test_generated": false,
+      "test_generated": true,
       "test_generation_error": null,
-      "test_name": null,
-      "test_file_path": null,
-      "test_executed_success": null,
+      "test_name": "w01_search_filter_and_download_free_photo",
+      "test_file_path": "pom_tests/w01_search_filter_and_download_free_photo_pom.noauth.spec.js",
+      "test_executed_success": true,
       "test_execution_error": null,
-      "pom_test_name": null,
-      "pom_test_file_path": null,
-      "pom_test_executed_success": null,
+      "pom_test_name": "w01_search_filter_and_download_free_photo_pom.noauth.spec.js",
+      "pom_test_file_path": "pom_tests/w01_search_filter_and_download_free_photo_pom.noauth.spec.js",
+      "pom_test_executed_success": true,
       "pom_test_execution_error": null,
-      "pom_files": null,
-      "test_steps": null,
-      "video_recording_path": null
+      "pom_files": [
+        {
+          "url": "",
+          "file_name": "HomePage.js",
+          "file_path": "pom_tests/pom/HomePage.js"
+        },
+        {
+          "url": "",
+          "file_name": "SearchResultsPage.js",
+          "file_path": "pom_tests/pom/SearchResultsPage.js"
+        }
+      ],
+      "test_steps": [
+        "Navigate to homepage: Load the Unsplash homepage.",
+        "Direct Search Navigation: Navigate directly to the search results for 'mountains'."
+      ],
+      "video_recording_path": "/var/tmp/Roost/RoostGPT/ui_gemini_unsplash_auth/63b21cd4-fff4-461f-9ea6-2fd97015f192/temp_info/unsplash.com/extracted_data/recordings/WF001_a1/069d4aaf-d7a6-7669-8000-db55042f3c7f.mp4"
     },
     {
       "workflow_id": "WF002",
       "title": "Unsplash+ Subscription Discovery",
-      "goal": "Navigate to the Unsplash+ landing page to view premium benefits. Success: Unsplash+ landing page is displayed.",
-      "feature_area": "Unsplash+",
+      "goal": "Verify users can access the Unsplash+ subscription page to view benefits.",
+      "feature_area": "Stock photography and media platform",
       "priority": "medium",
       "starting_hint": "1. Navigate to https://unsplash.com\n2. Click the 'Unsplash+' link in the top navigation bar\n3. Verify the 'Get Unsplash+' call-to-action and premium feature list are visible",
       "discovery_source": "roost_discovered",
       "source_file": null,
       "source_file_hash": null,
-      "worker_completed": false,
-      "worker_result": "pending",
-      "linked_scenario_name": null,
+      "worker_completed": true,
+      "worker_result": "success",
+      "linked_scenario_name": "w02_unsplash_subscription_discovery",
       "error": null,
-      "scenario_name": null,
-      "scenario_file_path": null,
+      "scenario_name": "w02_unsplash_subscription_discovery",
+      "scenario_file_path": "scenarios/WF002_unsplash_subscription_discovery.json",
       "scenario_summary_file_path": "scenarios/summaries/WF002_unsplash_subscription_discovery.md",
       "report_pdf_file_path": "scenarios/reports/WF002_unsplash_subscription_discovery.pdf",
       "feature_file_path": null,
       "feature_file_name": null,
-      "agent_workflow_file_path": null,
+      "agent_workflow_file_path": "/var/tmp/Roost/RoostGPT/ui_gemini_unsplash_auth/63b21cd4-fff4-461f-9ea6-2fd97015f192/temp_info/unsplash.com/extracted_data/execution_flow_WF002_unsplash_subscription_discovery.json",
       "agent_workflow_completed": false,
       "scenario_analysis_result_file_path": null,
-      "agent_activity_summary": null,
-      "agent_activity_error": null,
-      "agent_activity_outcome": null,
-      "agent_recommendation": null,
-      "agent_completion_level": null,
-      "agent_steps_completed": null,
-      "visited_urls": null,
+      "agent_activity_summary": [
+        "The agent attempted to navigate to Unsplash.com to access the Unsplash+ landing page but encountered a persistent access block. To recover, the agent tried clicking a 'Go home' link, navigating directly to the '/plus' subpage, and searching for the site via DuckDuckGo and Google to find an alternative entry point. Despite these varied recovery attempts, the site remained inaccessible, and the agent terminated the session after confirming a hard blocker was in place."
+      ],
+      "agent_activity_error": [
+        "A persistent access block (likely bot detection or a firewall) was encountered at Step 1. The agent attempted several recovery strategies: Step 3 involved clicking a 'Go home' link; Step 4 attempted direct navigation to the target subpage (/plus); Steps 5 and 6 attempted to use external search engines as referral sources. None of these actions bypassed the block, leading to a terminal failure at Step 8."
+      ],
+      "agent_activity_outcome": [
+        "The goal was not achieved. The agent was unable to view the Unsplash+ landing page or verify premium features due to a site-wide access restriction."
+      ],
+      "agent_recommendation": "Investigate the environment's IP reputation and bot detection headers. Consider using residential proxies or adjusting the automation framework to better mimic human behavior to bypass the 'hard blocker' identified during execution.",
+      "agent_completion_level": "failed",
+      "agent_steps_completed": 8,
+      "visited_urls": [
+        "https://unsplash.com",
+        "https://unsplash.com/",
+        "https://unsplash.com/plus",
+        "about:blank"
+      ],
       "execution_flow_file_path": null,
-      "test_generated": false,
+      "test_generated": true,
       "test_generation_error": null,
-      "test_name": null,
-      "test_file_path": null,
-      "test_executed_success": null,
+      "test_name": "w02_unsplash_subscription_discovery",
+      "test_file_path": "pom_tests/w02_unsplash_subscription_discovery_pom.noauth.spec.js",
+      "test_executed_success": true,
       "test_execution_error": null,
-      "pom_test_name": null,
-      "pom_test_file_path": null,
-      "pom_test_executed_success": null,
+      "pom_test_name": "w02_unsplash_subscription_discovery_pom.noauth.spec.js",
+      "pom_test_file_path": "pom_tests/w02_unsplash_subscription_discovery_pom.noauth.spec.js",
+      "pom_test_executed_success": true,
       "pom_test_execution_error": null,
-      "pom_files": null,
-      "test_steps": null,
-      "video_recording_path": null
+      "pom_files": [
+        {
+          "url": "",
+          "file_name": "HomePage.js",
+          "file_path": "pom_tests/pom/HomePage.js"
+        },
+        {
+          "url": "",
+          "file_name": "ErrorPage.js",
+          "file_path": "pom_tests/pom/ErrorPage.js"
+        },
+        {
+          "url": "",
+          "file_name": "BasePage.js",
+          "file_path": "pom_tests/pom/BasePage.js"
+        }
+      ],
+      "test_steps": [
+        "Navigate to homepage: Navigate to the Unsplash homepage.",
+        "Navigate to Unsplash+ subpage: Directly navigate to the Unsplash+ landing page.",
+        "Navigate to Google: Navigate to Google to attempt an external referral entry point.",
+        "Navigate back to Unsplash: Return to Unsplash to confirm if the block persists.",
+        "Verify Block Page State: Identify the 'Go home' link on the blocked/error page."
+      ],
+      "video_recording_path": "/var/tmp/Roost/RoostGPT/ui_gemini_unsplash_auth/63b21cd4-fff4-461f-9ea6-2fd97015f192/temp_info/unsplash.com/extracted_data/recordings/WF002_a1/069d4aaf-d7f1-71e4-8000-1e2a8803955b.mp4"
     },
     {
       "workflow_id": "WF003",
@@ -356,11 +434,11 @@
   "Imported_Test_Coverage": null,
   "Token_Usage": {
     "cumulative": {
-      "input_tokens": 2028421,
-      "output_tokens": 147321,
+      "input_tokens": 2445845,
+      "output_tokens": 183731,
       "cached_input_tokens": 0,
-      "total_tokens": 2175742,
-      "total_cost_usd": 0.961379
+      "total_tokens": 2629576,
+      "total_cost_usd": 1.179463
     },
     "runs": [
       {
@@ -447,6 +525,80 @@
             "input": 20095,
             "output": 482,
             "cost": 0.011493
+          }
+        }
+      },
+      {
+        "run_type": "retrigger_workers",
+        "timestamp": "2026-04-07T07:01:43.192293",
+        "provider": "gemini",
+        "model": "gemini-3-flash-preview",
+        "input_tokens": 192244,
+        "output_tokens": 29303,
+        "total_tokens": 221547,
+        "cost_usd": 0.150018,
+        "sessions": {
+          "worker_supervisor_WF001": {
+            "input": 2630,
+            "output": 130,
+            "cost": 0.001705
+          },
+          "worker_supervisor_WF002": {
+            "input": 4084,
+            "output": 142,
+            "cost": 0.002468
+          },
+          "explore_worker_WF001_a1": {
+            "input": 67566,
+            "output": 9714,
+            "cost": 0.051688
+          },
+          "explore_worker_WF002_a1": {
+            "input": 113495,
+            "output": 16875,
+            "cost": 0.084597
+          },
+          "explore_synthesize_single_workflow": {
+            "input": 4469,
+            "output": 2442,
+            "cost": 0.00956
+          }
+        }
+      },
+      {
+        "run_type": "retrigger",
+        "timestamp": "2026-04-07T07:03:22.069813",
+        "provider": "gemini",
+        "model": "gemini-3-flash-preview",
+        "input_tokens": 225180,
+        "output_tokens": 7107,
+        "total_tokens": 232287,
+        "cost_usd": 0.068066,
+        "sessions": {
+          "post_explore_testgen": {
+            "input": 0,
+            "output": 0,
+            "cost": 0.0
+          },
+          "pom_gen_w01_search_filter_and_download_free_photo": {
+            "input": 24752,
+            "output": 952,
+            "cost": 0.007926
+          },
+          "pom_gen_w02_unsplash_subscription_discovery": {
+            "input": 62404,
+            "output": 2551,
+            "cost": 0.019659
+          },
+          "test_gen_pom_w02_unsplash_subscription_discovery": {
+            "input": 74803,
+            "output": 1411,
+            "cost": 0.019682
+          },
+          "test_gen_pom_w01_search_filter_and_download_free_photo": {
+            "input": 63221,
+            "output": 2193,
+            "cost": 0.020799
           }
         }
       }
