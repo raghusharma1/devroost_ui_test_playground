@@ -1,0 +1,26 @@
+{
+    "login_scenario": "Skipped",
+    "workflow_completed": false,
+    "workflow_result": "FAIL",
+    "workflow_error": "",
+    "login_agent_activity_summary": "Not available",
+    "user_scenario_agent_activity_summary": "Not available",
+    "generated_files": {
+        "feature_files": [],
+        "json_files": []
+    },
+    "scenarios": {
+        "w01_search_filter_and_download_high_res_photo": {
+            "test_name": "w01_search_filter_and_download_high-res_photo",
+            "description": "Scenario run is working",
+            "testFilePath": "",
+            "extracted_data": "unsplash.com/extracted_data/captured_ui_data.json"
+        },
+        "w03_api_documentation_and_endpoint_reference": {
+            "test_name": "w03_api_documentation_and_endpoint_reference",
+            "description": "Scenario run is working",
+            "testFilePath": "",
+            "extracted_data": "unsplash.com/extracted_data/captured_ui_data.json"
+        }
+    }
+}
