@@ -1,0 +1,103 @@
+{
+  "site_type": "general_website",
+  "site_category": "Stock photography platform",
+  "confidence_score": 0.9,
+  "user_journeys": [
+    {
+      "journey_name": "Image Interaction & Download",
+      "description": "User attempts to browse and download photos in specific sizes.",
+      "business_value": "Allows users to acquire high-quality imagery for creative projects.",
+      "user_persona": "Content Creator",
+      "frequency": "daily",
+      "complexity": "medium"
+    }
+  ],
+  "proposed_scenarios": [
+    {
+      "scenario_name": "Discovered Workflow: Download Photo with Size Selection -- Partial",
+      "description": "Partial flow where the agent navigated to the site but was unable to interact with the photo grid, resulting in a session termination.",
+      "workflow_narrative": "The agent navigated to the Unsplash homepage with the intent to download a photo. However, instead of selecting an image from the grid, the agent clicked the 'Go home' link, remaining on the landing page. The agent was unable to identify the photo elements and the workflow was blocked.",
+      "playwright_implementation_guidance": [
+        "The agent encountered a blocker identifying the photo grid. Ensure the test waits for the photo feed to hydrate (e.g., using page.waitForSelector('[data-testid=\"photo-grid-masonry\"]')) before attempting selection.",
+        "The 'Go home' link was used as a fallback or accidental interaction; verify if this was due to bot detection or UI overlay."
+      ],
+      "test_type": "partial_flow",
+      "priority": "high",
+      "business_goal": "Verify users can access the photo grid for image selection.",
+      "user_story": "As a Content Creator, I want to browse the photo grid so that I can select an image to download.",
+      "detailed_steps": [
+        {
+          "step_number": 1,
+          "action": "Navigate to homepage",
+          "component": "Navigation",
+          "description": "Load the Unsplash homepage",
+          "expected_page_url": "https://unsplash.com",
+          "verification_point": "Page loaded",
+          "business_impact": "Site accessibility",
+          "selector": "page.goto('https://unsplash.com', { waitUntil: 'domcontentloaded' })",
+          "confidence": 100,
+          "based_on_interaction": true,
+          "all_selectors": []
+        },
+        {
+          "step_number": 2,
+          "action": "click",
+          "component": "Navigation",
+          "description": "Click the 'Go home' link",
+          "expected_page_url": "https://unsplash.com/",
+          "verification_point": "Browser remains on or returns to the landing page",
+          "business_impact": "Navigation consistency",
+          "selector": "page.getByRole('link', { name: 'Go home' })",
+          "all_selectors": [
+            {
+              "selector": "page.getByRole('link', { name: /Go home/ })",
+              "strategy": "role_name_regex",
+              "confidence": 95,
+              "is_unique": true
+            },
+            {
+              "selector": "page.getByText('Go home')",
+              "strategy": "text",
+              "confidence": 88,
+              "is_unique": true
+            }
+          ],
+          "confidence": 99,
+          "based_on_interaction": true,
+          "page_context": {
+            "suggested_page_class": "HomePage",
+            "page_url_pattern": "/"
+          },
+          "method_context": {
+            "suggested_method_name": "clickGoHome",
+            "action_type": "click"
+          }
+        }
+      ],
+      "expected_results": [
+        "The agent reaches the homepage",
+        "The agent is unable to proceed to photo selection due to element identification failure"
+      ],
+      "edge_cases_to_test": [
+        "Photo grid failing to load due to network issues",
+        "Bot detection mechanisms blocking interaction with image elements"
+      ],
+      "data_requirements": [
+        "No specific data required for this partial navigation"
+      ],
+      "prerequisites": [
+        "Unsplash website is accessible"
+      ]
+    }
+  ],
+  "site_url": "https://unsplash.com",
+  "test_name": "w02_download_photo_with_size_selection",
+  "login_mechanisms": [
+    "general_interaction"
+  ],
+  "login_completion_state": "successful",
+  "analysis_timestamp": "2026-05-21T18:36:36.789310",
+  "auth_required": false,
+  "starting_url": null,
+  "workflow_id": "WF002"
+}
