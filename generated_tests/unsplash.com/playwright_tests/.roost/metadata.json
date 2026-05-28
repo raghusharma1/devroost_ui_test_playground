@@ -1,0 +1,176 @@
+{
+  "metadata_version": "1.0",
+  "created_at": "2026-05-28T17:53:50.353081",
+  "last_updated": "2026-05-28T17:58:14.680108",
+  "output_dir": "RoostGPT\\ui_gemini_unsplash_auth\\1779970929\\source\\devroost_ui_test_playground\\generated_tests\\unsplash.com\\playwright_tests",
+  "site_url": "https://unsplash.com",
+  "pom_files": [
+    {
+      "url": "",
+      "file_name": "HomePage.js",
+      "file_path": "pom_tests\\pom\\HomePage.js"
+    }
+  ],
+  "Login_File": {
+    "name": null,
+    "path": null,
+    "hash": null,
+    "agent_workflow_completed": false,
+    "agent_workflow_file_path": null,
+    "agent_interaction_file_path": null,
+    "agent_activity_summary": null,
+    "agent_activity_error": null,
+    "agent_activity_outcome": null,
+    "agent_recommendation": null,
+    "agent_completion_level": null,
+    "agent_steps_completed": null,
+    "execution_flow_file_path": null,
+    "systematic_selectors_file_path": null,
+    "scenario_name": null,
+    "scenario_file_path": null,
+    "test_generated": false,
+    "test_generation_error": null,
+    "test_file_path": null,
+    "test_executed_success": null,
+    "test_execution_error": null,
+    "pom_test_name": null,
+    "pom_test_file_path": null,
+    "pom_test_executed_success": null,
+    "pom_test_execution_error": null,
+    "pom_files": null
+  },
+  "Workflows": [
+    {
+      "workflow_id": "WF001",
+      "title": "Wallpaper Discovery",
+      "goal": "Verify users can browse and access specific wallpaper content.",
+      "feature_area": "Stock photography and wallpaper platform",
+      "priority": "high",
+      "starting_hint": "# TASK: View Wallpapers on Unsplash\n\n## STEPS:\n1. Navigate to https://unsplash.com\n2. Use click on link \"Wallpapers\"\n3. Use click on image \"wallpaper\"\n\n## SUCCESS: Complete the steps above\n",
+      "discovery_source": "user_scenario",
+      "source_file": "C:/Users/ZB/Downloads/unsplash_wallpaper_click (1).pdf",
+      "source_file_hash": "f208dffb01890a544743570e23f79136c4f4102de4998fb5c7a66c26aaa8d604",
+      "worker_completed": true,
+      "worker_result": "success",
+      "linked_scenario_name": "w01_unsplash_wallpaper_click_1",
+      "error": null,
+      "scenario_name": "w01_unsplash_wallpaper_click_1",
+      "scenario_file_path": "generated_tests/unsplash.com/playwright_tests/scenarios/WF001_unsplash_wallpaper_click_1.json",
+      "scenario_summary_file_path": "generated_tests/unsplash.com/playwright_tests/scenarios/summaries/WF001_unsplash_wallpaper_click_1.md",
+      "report_pdf_file_path": "generated_tests/unsplash.com/playwright_tests/scenarios/reports/WF001_unsplash_wallpaper_click_1.pdf",
+      "feature_file_path": null,
+      "feature_file_name": null,
+      "agent_workflow_file_path": "C:/var/tmp/Roost/RoostGPT/ui_gemini_unsplash_auth/1779970929/temp_info/unsplash.com/extracted_data/execution_flow_WF001_unsplash_wallpaper_click_1.json",
+      "agent_workflow_completed": true,
+      "scenario_analysis_result_file_path": null,
+      "agent_activity_summary": [
+        "The agent successfully executed the workflow to view wallpapers on Unsplash. It navigated to the homepage, accessed the 'Wallpapers' category via the navigation menu, and selected a specific wallpaper image to view its details. During the process, the agent encountered and dismissed a promotional overlay to finalize the view."
+      ],
+      "agent_activity_error": [
+        "At Step 4, an 'Upgrade to Unsplash+' overlay appeared after clicking the wallpaper image. The agent successfully recovered by identifying the 'Got it!' button and clicking it to dismiss the interruption, ensuring the final state was reached."
+      ],
+      "agent_activity_outcome": [
+        "The agent achieved the original goal of navigating to Unsplash, clicking the 'Wallpapers' link, and selecting a wallpaper image."
+      ],
+      "agent_recommendation": "The execution was successful. To improve future stability, consider adding global handlers for common promotional overlays (like Unsplash+) that may appear intermittently during navigation.",
+      "agent_completion_level": "complete",
+      "agent_steps_completed": 5,
+      "visited_urls": [
+        "https://unsplash.com/photos/a-black-and-white-photo-of-trees-in-the-dark-4D_Ou7Xb944",
+        "https://unsplash.com",
+        "https://unsplash.com/t/wallpapers",
+        "https://unsplash.com/"
+      ],
+      "execution_flow_file_path": null,
+      "test_generated": true,
+      "test_generation_error": null,
+      "test_name": "w01_unsplash_wallpaper_click_1",
+      "test_file_path": "generated_tests/unsplash.com/playwright_tests/pom_tests/w01_unsplash_wallpaper_click_1_pom.noauth.spec.js",
+      "test_executed_success": true,
+      "test_execution_error": null,
+      "pom_test_name": "w01_unsplash_wallpaper_click_1_pom.noauth.spec.js",
+      "pom_test_file_path": "generated_tests/unsplash.com/playwright_tests/pom_tests/w01_unsplash_wallpaper_click_1_pom.noauth.spec.js",
+      "pom_test_executed_success": true,
+      "pom_test_execution_error": null,
+      "pom_files": [
+        {
+          "url": "",
+          "file_name": "HomePage.js",
+          "file_path": "pom_tests\\pom\\HomePage.js"
+        }
+      ],
+      "test_steps": [
+        "Load the Unsplash homepage",
+        "Click on the 'Wallpapers' category link",
+        "Click on the specific wallpaper image link",
+        "Click 'Got it!' to dismiss the Unsplash+ promotional overlay"
+      ],
+      "video_recording_path": "C:/var/tmp/Roost/RoostGPT/ui_gemini_unsplash_auth/1779970929/temp_info/unsplash.com/extracted_data/recordings/WF001_a1/06a1833f-bd47-752f-8000-9a7301033b32.mp4"
+    }
+  ],
+  "explore_focus_areas": [],
+  "Imported_Test_Coverage": null,
+  "Token_Usage": {
+    "cumulative": {
+      "input_tokens": 180829,
+      "output_tokens": 10256,
+      "cached_input_tokens": 0,
+      "total_tokens": 191085,
+      "total_cost_usd": 0.087071
+    },
+    "runs": [
+      {
+        "run_type": "generate",
+        "timestamp": "2026-05-28T17:58:14.628731",
+        "provider": "gemini",
+        "model": "gemini-3-flash-preview",
+        "input_tokens": 180829,
+        "output_tokens": 10256,
+        "total_tokens": 191085,
+        "cost_usd": 0.087071,
+        "sessions": {
+          "main_execution": {
+            "input": 0,
+            "output": 0,
+            "cost": 0.0
+          },
+          "worker_supervisor_WF001": {
+            "input": 2538,
+            "output": 123,
+            "cost": 0.001638
+          },
+          "explore_worker_WF001_a1": {
+            "input": 44177,
+            "output": 3364,
+            "cost": 0.022779
+          },
+          "explore_synthesize_single_workflow": {
+            "input": 2901,
+            "output": 1814,
+            "cost": 0.006893
+          },
+          "report_curation_WF001": {
+            "input": 5033,
+            "output": 249,
+            "cost": 0.003263
+          },
+          "post_explore_testgen": {
+            "input": 0,
+            "output": 0,
+            "cost": 0.0
+          },
+          "pom_gen_w01_unsplash_wallpaper_click_1": {
+            "input": 66705,
+            "output": 3556,
+            "cost": 0.026638
+          },
+          "test_gen_pom_w01_unsplash_wallpaper_click_1": {
+            "input": 59475,
+            "output": 1150,
+            "cost": 0.02586
+          }
+        }
+      }
+    ]
+  }
+}
